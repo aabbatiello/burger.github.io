@@ -1,20 +1,7 @@
-
-<div class="container">	
-	<div class="jumbotron"> 
-		<img src="../assets/img/burger-outline-filled.png"> 
-		<h1> Eat-Da-Burger! </h1>
-	</div>
-
-	{{!-- burger list before being eaten --}}
-	<div class="row">
-		<div class="col-md-4 col-md-offset-1">
-			<div class="panel-panel default">
-				<ul class="list-group">
+<div class="leftburger">
 				{{#each burgers}}
 					{{#unless this.devoured}}
-					<li class="list-group-item">
-						<div class="input-group">
-							<p class="lead"> {{this.burger_name}} </p>
+					{{this.burger_name}} </p>
 							<span class="input-group-btn">
 								<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
 									<input type="hidden" name="devoured" value="true">
@@ -29,4 +16,20 @@
 		</div>
 	</div>
 
+<div id="devour">
+</div>
 
+<div id="rightburger">
+</div>
+
+<form id="addburger" action="/create" method="POST">
+	<textarea type="text" name="newBurger"></textarea>
+
+	<button type="submit">Submit</button>
+</form>
+
+<h3>Enter a delicious burger then click the Submit button</h3>
+
+
+
+	
